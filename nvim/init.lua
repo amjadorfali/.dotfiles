@@ -1,4 +1,5 @@
 -- TODO: install harpoon when needed to level your game  https://github.com/ThePrimeagen/harpoon/tree/harpoon2
+-- TODO get plugins: Fugitive, undoo tree, and follow the father of lunatics https://youtu.be/w7i4amO_zaE?si=aRWMeNpFLuZZy67c
 --[[
 
 =====================================================================
