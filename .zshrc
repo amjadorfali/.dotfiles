@@ -122,7 +122,7 @@ esac
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-alias ls="eza -a --icons=always"
+alias ls="eza -a --icons=always --git --git-ignore --sort=type"
 
 eval "$(zoxide init zsh)"
 

@@ -1,5 +1,5 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -11,41 +11,40 @@ local config = wezterm.config_builder()
 
 config.macos_window_background_blur = 10
 local withBg = 1
+local bgImages = { "aegis_pointing.png", "cyber_girl.jpg" }
+if withBg == 1 then
+	config.background = {
+		{
+			source = {
+				-- NORMAL IMGS
+				File = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/" .. bgImages[2],
+				-- GIFS
+				--        File = {
+				--	  speed=2,
+				--	  path = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/city-scape.gif",
+				--	}
+			},
 
-if(withBg == 1) 
-then
-config.background = {
-    {
-      source = {
-	-- NORMAL IMGS
-        File = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/aegis-pointing.png",
-	-- GIFS
---        File = {
---	  speed=2,
---	  path = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/city-scape.gif",
---	}
-      }, 
-
-      hsb = {
-        hue = 1,
-       saturation = 1.1,
-       brightness = 0.2 --1
-      },
-     -- attachment = { Parallax = 0.3 },
-      -- width = "100%",
-      -- height = "100%",
-    },
-    {
-      source = {
-      Color =   "#011423", --"#000000"
-  },
-      width = "100%",
-      height = "100%",
-      opacity =  0.75 --0.45
-
-    },
-  }
-else config.window_background_opacity = 0.9
+			hsb = {
+				hue = 1,
+				saturation = 1.1,
+				brightness = 0.5, --1
+			},
+			-- attachment = { Parallax = 0.3 },
+			-- width = "100%",
+			-- height = "100%",
+		},
+		{
+			source = {
+				Color = "#011423", --"#000000"
+			},
+			width = "100%",
+			height = "100%",
+			opacity = 0.75, --0.45
+		},
+	}
+else
+	config.window_background_opacity = 0.9
 end
 -- this is how officially they recommend handing imgs https://wezfurlong.org/wezterm/config/appearance.html#window-background-image
 
@@ -63,7 +62,6 @@ end
 --}
 -- official img handling ends
 
-
 -- my coolnight colorscheme
 config.colors = {
 	foreground = "#CBE0F0",
@@ -75,10 +73,10 @@ config.colors = {
 	selection_fg = "#CBE0F0",
 	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
 	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
-  	tab_bar = {
-    	-- The color of the inactive tab bar edge/divider
- inactive_tab_edge = "#575757",
-  		},
+	tab_bar = {
+		-- The color of the inactive tab bar edge/divider
+		inactive_tab_edge = "#575757",
+	},
 }
 
 --config = {
@@ -94,35 +92,35 @@ config.adjust_window_size_when_changing_font_size = false
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
-    left = 3,
-    right = 3,
-    top = 0,
-    bottom = 0,
-   }
+	left = 3,
+	right = 3,
+	top = 0,
+	bottom = 0,
+}
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 19
 config.window_decorations = "RESIZE"
-config.hide_tab_bar_if_only_one_tab=true
+config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
-  -- The font used in the tab bar.
-  -- Roboto Bold is the default; this font is bundled
-  -- with wezterm.
-  -- Whatever font is selected here, it will have the
-  -- main font setting appended to it to pick up any
-  -- fallback fonts you may have used there.
-  font = wezterm.font { family = 'Roboto', weight = 'Bold' },
+	-- The font used in the tab bar.
+	-- Roboto Bold is the default; this font is bundled
+	-- with wezterm.
+	-- Whatever font is selected here, it will have the
+	-- main font setting appended to it to pick up any
+	-- fallback fonts you may have used there.
+	font = wezterm.font({ family = "Roboto", weight = "Bold" }),
 
-  -- The size of the font in the tab bar.
-  -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 16.0,
+	-- The size of the font in the tab bar.
+	-- Default to 10.0 on Windows but 12.0 on other systems
+	font_size = 16.0,
 
-  -- The overall background color of the tab bar when
-  -- the window is focused
-  active_titlebar_bg = '#333333',
+	-- The overall background color of the tab bar when
+	-- the window is focused
+	active_titlebar_bg = "#333333",
 
-  -- The overall background color of the tab bar when
-  -- the window is not focused
-  inactive_titlebar_bg = '#333333',
+	-- The overall background color of the tab bar when
+	-- the window is not focused
+	inactive_titlebar_bg = "#333333",
 }
 -- and finally, return the configuration to wezterm
 return config
