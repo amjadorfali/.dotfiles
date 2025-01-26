@@ -11,24 +11,18 @@ local config = wezterm.config_builder()
 
 config.macos_window_background_blur = 10
 local withBg = 1
-local bgImages = { "aegis_pointing.png", "cyber_girl.jpg" }
+local bgImages = { "aegis-pointing.png", "cyber_girl.jpg", "city-scape.gif" }
 if withBg == 1 then
 	config.background = {
 		{
 			source = {
-				-- NORMAL IMGS
-				File = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/" .. bgImages[2],
-				-- GIFS
-				--        File = {
-				--	  speed=2,
-				--	  path = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/city-scape.gif",
-				--	}
+				File = "/Users/" .. os.getenv("USER") .. "/files/wallpapers/" .. bgImages[1],
 			},
 
 			hsb = {
 				hue = 1,
 				saturation = 1.1,
-				brightness = 0.5, --1
+				brightness = 0.2, --1
 			},
 			-- attachment = { Parallax = 0.3 },
 			-- width = "100%",
