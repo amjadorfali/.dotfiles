@@ -127,3 +127,12 @@ alias ls="eza -a --icons=always --git --sort=type"
 eval "$(zoxide init zsh)"
 
 alias cd="z"
+
+alias air="~/go/bin/air"
+
+# Use nvim for man pages
+export MANPAGER='nvim +Man!'
+
+toBinary(){
+  printf "%s\n obase=2; $1" | bc
+}
