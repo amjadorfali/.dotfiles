@@ -91,7 +91,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font = wezterm.font("MesloLGS NF")
 config.font_size = 19
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
