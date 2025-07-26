@@ -10,7 +10,7 @@ local config = wezterm.config_builder()
 -- config.color_scheme = 'AdventureTime'
 
 config.macos_window_background_blur = 10
-local withBg = 0
+local withBg = 1
 local bgImages = { "aegis-pointing.png", "cyber_girl.jpg", "city-scape.gif" }
 if withBg == 1 then
 	config.background = {
